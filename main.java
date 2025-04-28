@@ -93,10 +93,6 @@ class Doctor {
         return newMade;
     }
 
-
-    public static void prescriptionGiven(String checkupType) {
-        System.out.println("Your data");
-    }
 }
 
 
@@ -111,7 +107,7 @@ class Chemist {
                 String data[] = patient.retrieveMedicalRecord().get(i).split(" ");
                 
                 if(data[3].equals("false")){
-                    System.out.println("You don't have any problem...");
+                    System.out.println("You did not have any problem...");
                 }
                 else if(data[3].equals("true") && data[2].equals("BP")){
                     System.out.println("You need to take Telmisartan 40mg...");
@@ -183,11 +179,10 @@ public class Main {
                     }
                     System.out.println("Select which user data you want to see..");
                     for(int i =0;i<allPatients.size();i++){
-                        System.out.println("Under for 2 select.."+ i);
                         if(allPatients.get(i).retrieveMedicalRecord().size()==0){
-                        
                         continue;
                     }
+                            
                     else{
                         String name = allPatients.get(i).retrieveMedicalRecord().get(0).split(" ")[0];
                         System.out.println("Select "+name+ " with "+i);
