@@ -166,7 +166,7 @@ public class Main {
                     Patient patient = new Patient(name, age, problemNo);
                     
                     allPatients.add(patient);
-                    System.out.println(allPatients.get(0));
+                    
                 }
                 
                 if(no==2){
