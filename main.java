@@ -226,20 +226,17 @@ public class Main {
                         System.out.println("Select which user data you want to see..");
                         
                     for(int i =0;i<allPatients.size();i++){
-                        if(allPatients.get(0).retrieveMedicalRecord().size()<1){
-                            System.out.println("No record found for Prescription...");
-                            break;
+                        if(allPatients.get(i).retrieveMedicalRecord().size()<1){
+                            System.out.println("No record of "+i+" User");
+                            continue;
                         }
                         
                         String name = allPatients.get(i).retrieveMedicalRecord().get(0).split(" ")[0];
                         System.out.println("Select "+name+ " with "+i);
                     }
-                    
-                    
-                        int selectionNo = sc.nextInt();
-                        nc.providePrescription(allPatients.get(selectionNo));
-                        
-                    
+                    System.out.print("Select user:..");
+                    int selectionNo = sc.nextInt();
+                    nc.providePrescription(allPatients.get(selectionNo));
                     
                     }
                     else{
